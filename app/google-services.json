@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "234227539090",
+    "project_id": "teamj-32b07",
+    "storage_bucket": "teamj-32b07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234227539090:android:994228011ffe4b0c931a4b",
+        "android_client_info": {
+          "package_name": "com.elancier.team_j"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC59KkX7ME1WTZbHPut2EL4Ie0C7qENlDQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GPS_PROVIDER" />
+    <uses-permission android:name="android.permission.NETWORK_PROVIDER" />
+    <uses-permission android:name="android.permission.PASSIVE_PROVIDER" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <application
+        android:name="com.elancier.team_j.TestApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemes"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:icon">
+        <activity
+            android:name="com.elancier.team_j.FullScreen"
+            android:exported="false" />
+        <activity
+            android:name="com.elancier.team_j.Frontsheet"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.NewEODSelect"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.ExpenseAdd"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.CustomersListbyCity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.AdvanceRequest"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Add_Eod"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Eod_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Plant_report"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Web_Report"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.elancier.team_j.Report_Dashboard"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.elancier.team_j.Fish_report_list"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Plant_Harvest_report"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Family_report"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Family.Harvest_Family"
+            android:theme="@style/AppThemes" />
+
+        <meta-data
+            android:name="CLOUDINARY_URL"
+            android:value="cloudinary://@elancier-solutions" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service
+            android:name=".service.PushNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT">
+                </action>
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+
+        <activity
+            android:name="com.elancier.team_j.Family_List"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Family.Family_Main"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name="com.elancier.team_j.Contact_Us"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.elancier.team_j.Forgot_Password"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.elancier.team_j.View_profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.elancier.team_j.Search_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.elancier.team_j.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.elancier.team_j.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name="com.elancier.team_j.Splashscreen"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.elancier.team_j.Harvest.Harvest_Main" />
+        <activity
+            android:name="com.elancier.team_j.Branch_List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name="com.elancier.team_j.Fish_report"
+            android:theme="@style/AppThemes" />
+        <activity android:name="com.elancier.team_j.Verify_Activity" />
+        <activity
+            android:name="com.elancier.team_j.Customers_List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.TourplanReport"
+            android:theme="@style/AppThemesnew" />
+        <activity
+            android:name="com.elancier.team_j.Request_Add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Request_List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Customer_Add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Profile_update"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.EOD_Customers_List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.vanithamarket.Prolist"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.FullView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Transaction_List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Credit_List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Schedule_Meeting"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Meeting_Add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Patient_Add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Travel_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.Patient_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity
+            android:name="com.elancier.team_j.GetLocation_Admin"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+        <activity android:name="com.elancier.team_j.Camp_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes" />
+
+        <activity android:name="com.elancier.team_j.Camp_leads"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes"/>
+        <activity android:name=".Dashboard"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Customers_List_New"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes"/>
+        <activity android:name=".Tour_List" />
+        <activity android:name="com.elancier.team_j.GetLocation_Doctor"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes"/>
+        <activity android:name="com.elancier.team_j.Outstanding_customer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemes"/>
+        <activity android:name="com.elancier.team_j.Navogo_ApplyLeave"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name="com.elancier.team_j.Navogo_LeaveList"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.elancier.team_j.Communication_list"
+            />
+
+        <receiver
+            android:name="com.elancier.team_j.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name="com.elancier.team_j.service.FetchAddressIntentService"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>
